@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
       <div class="mx-auto order-0">
-        <a class="navbar-brand mr-auto font-weight-bold" href="index.php"><span class="iiit">IIIT</span> <span class="bkstr">Bookstore</span></a>
+        <a class="navbar-brand mr-auto font-weight-bold" href="index.php"><span class="iiit">olcademy</span> <span class="bkstr">Task</span></a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-collapse">
           <span class="fa fa-bars"></span>
@@ -44,18 +44,6 @@
           <li class="nav-item">
             <a class="nav-link" href="login_user.php"><span class="fa fa-sign-in"></span>&nbsp;Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin.php"><span class="fa fa-key"></span>&nbsp;Admin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="books.php"><span class="fa fa-book"></span>&nbsp;Books</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php"><span class="fa fa-address-book"></span>&nbsp;Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.php"><span class="fa fa-shopping-cart"></span>&nbsp;My Cart</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -67,17 +55,9 @@
       <div class="container-fluid cta">
         <div class="body">
           <h1 class="text-center text-light display-4 font-weight-bold">WELCOME TO</h1>
-          <h1 class="text-center display-4 font-weight-bold"><span style="color:#F18C21">IIIT</span> <span style="color:#009A66">BOOKSTORE</span></h1>
-        </div>
-        <div class="search-console">
-          <form action="form.php" method="GET">
-              <div class="input-group mb-3 mx-auto" style="width:400px">
-                  <input type="text" class="form-control" placeholder="Search Book Name ..." name="query" id="book-query" onfocus="this.style.boxShadow='none'">
-                  <div class="input-group-append">
-                      <button type="submit" class="btn btn-info"><span class="fa fa-search"></span></button>
-                  </div>
-              </div>
-          </form>
+          <h1 class="text-center display-4 font-weight-bold"><span style="color:#F18C21">olc</span><span style="color:#009A66">ademy</span></h1>
+          <br/>
+          <h1 class="text-center"><img class="text-center" src="./././Images/olc.png" alt="olca" width="200" height="200"> </h1>
         </div>
       </div>
     </div>
