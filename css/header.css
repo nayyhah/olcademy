@@ -1,0 +1,44 @@
+
+body { 
+  font: 14px sans-serif; 
+  background:#000;
+}
+.navbar {
+  padding:2%;
+  background:rgba(0,0,0,1);
+  transition:0.3s;
+}
+.nav-link, .navbar-brand span.iiit, .navbar-brand span.bkstr {
+  transition:0.3s ease;
+}
+.navbar-brand:hover span.iiit {
+  color:#F18C21;
+}
+.navbar-brand:hover span.bkstr {
+  color:#009A66;
+}
+.jumbotron {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  padding:0;
+  background-image:url('../images/iiit-bbsr-2.jpeg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.container-fluid.cta {
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+.cta > .body, .cta > .search-console {
+  width:50%;
+  position:relative;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
