@@ -9,10 +9,10 @@ require_once "./template/header.php";
 $email = $fullname = $dob = $gender = $password = $confirm_password = "";
 $email_err = $fullname_err = $dob_err = $gender_err = $password_err = $confirm_password_err = "";
 
-// Processing form data when form is submitted
-// Processing form data when form is submitted
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
 
     // Validate Email
     if(empty(trim($_POST["email"]))){
@@ -59,30 +59,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $fullname = trim($_POST["fullname"]);
     }
 
+    // Validate Gender
+    if(empty(trim($_POST["gender"]))){
+        $gender_err = "Please enter your Gender.";
+    } else{
+        $gender = trim($_POST["gender"]);
+    }
+
     // Validate dob
     if(empty(trim($_POST["dob"]))){
         $dob_err = "Please enter your DOB.";
-    } 
-    elseif (!preg_match('/^([0-9]{1,2})\\/([0-9]{1,2})\\/([0-9]{4})$/', trim($_POST["dob"]))){
+    } elseif (!preg_match('/^([0-9]{1,2})\\/([0-9]{1,2})\\/([0-9]{4})$/', trim($_POST["dob"]))){
          $dob_err = "Please enter DOB in DD/MM/YYYY format.";
-    }
-    // elseif (!ereg("^([0-9]{2})/([0-9]{2})/([0-9]{4})$",$_POST["dob"]), $parts)){
-    //   // Check the format
-    //   $dob_err = "The date of birth is not a valid date in the " . "format DD/MM/YYYY";
-
-    // } 
-    else{
+    } else{
         $dob = trim($_POST["dob"]);
     }
 
-    // Validate Gender
-    if(empty($_POST["gender"])){
-        $gender_err = "Please enter your Gender.";
-    } else{
-        $gender = $_POST["gender"];
-    }
-
-    
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";
@@ -102,14 +94,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
-    
-
-
     // Check input errors before inserting in database
     if(empty($email_err) && empty($fullname_err) && empty($dob_err) && empty($gender_err) && empty($password_err) && empty($confirm_password_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email,fullname,dob,gender,password) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (email, fullname, dob, gender, password) VALUES (?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -145,6 +134,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             width:350px;
             padding:20px; 
         }
+        .help-block{
+            color:red;
+        }
     </style>
 
     <div class="wrapper mx-auto shadow mt-5 mb-3 bg-light rounded">
@@ -154,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                     <label class="font-weight-bold"><span class="fa fa-envelope"></span>&nbsp;Email</label>
-                    <input class="form-control" type="text" name="email" value="<?php echo $email; ?>">
+                    <input class="form-control" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>">
                     <span class="help-block"><?php echo $email_err; ?></span>
             </div>
 
@@ -165,29 +157,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
 
             <div class="form-group <?php echo (!empty($dob_err)) ? 'has-error' : ''; ?>">
-                <label class="font-weight-bold"><span class="fa fa-calendar"></span>&nbsp;DOB</label>
-                <input type="text" name="dob" class="form-control" placeholder="DD/MM/YYYY" value="<?php echo $dob; ?>">
+                <label class="font-weight-bold"><span class="fa fa-user"></span>&nbsp;DOB</label>
+                <input type="text" name="dob" class="form-control" value="<?php echo $dob; ?>">
                 <span class="help-block"><?php echo $dob_err; ?></span>
             </div>
 
-<!--            <div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
-                <label class="font-weight-bold"><span class="fa fa-venus"></span>&nbsp;Gender</label>
-                <input type="text" name="gender" class="form-control" value="<?php echo $gender; ?>">
-                <span class="help-block"><?php echo $gender_err; ?></span>
-            </div>
-
-   -->
             <div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
                 <label class="font-weight-bold"><span class="fa fa-venus"></span>&nbsp;Gender</label>
-                <select name="gender" >
-                    <option selected>Choose...</option>
+                <select class="form-control" name="gender" >
+                    <option value="" selected>Choose...</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Prefer not to say">Prefer not to say</option>
                 </select>
                 <span class="help-block"><?php echo $gender_err; ?></span>
             </div>
-        
 
 
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
