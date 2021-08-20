@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
       <div class="mx-auto order-0">
-        <a class="navbar-brand mr-auto font-weight-bold" href="index.php"><span class="iiit">olcademy</span> <span class="bkstr">Task</span></a>
+        <a class="navbar-brand mr-auto font-weight-bold" href="index.php"><span class="iiit">Olcademy</span> <span class="bkstr">Task</span></a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-collapse">
           <span class="fa fa-bars"></span>
