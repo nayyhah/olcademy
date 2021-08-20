@@ -104,6 +104,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .wrapper {
             width:350px;padding:20px; 
         }
+        .help-block{
+            color:red;
+        }
     </style>
 
     <div class="wrapper mx-auto shadow mt-5 mb-3 bg-light rounded">
